@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Joe's Hotdog Stand</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <script language="javascript">
+            HOTDOG = 3.25;
+            FRIES = 2.00;
+            SODA = 1.50;
+            DISCOUNT = 0.1; //if pretax is above $20
+            TAX = .0625;
+            
+            num_hotdog = prompt("How many hot dogs would you like?", "");
+            num_fries = prompt("How many fries would you like?", "");
+            num_sodas = prompt("How many sodas would you like?", "");
+            
+            p_hotdog = HOTDOG * num_hotdog;    
+            p_fries = FRIES * num_fries;
+            p_sodas = SODA * num_sodas;
+            
+            document.write("How many hot dogs would you like?");
+            document.write("<br>");
+            document.write("Hotdogs: " + num_hotdog);
+            document.write("<br>");
+            document.write("Cost: $" + p_hotdog);
+            document.write("<br>");
+            
+            document.write("How many fries would you like?");
+            document.write("<br>");
+            document.write("Fries: " + num_fries);
+            document.write("<br>");
+            document.write("Cost: $" + p_fries);
+            document.write("<br>");
+            
+            document.write("How many sodas would you like?");
+            document.write("<br>");
+            document.write("Sodas: " + num_sodas);
+            document.write("<br>");
+            document.write("Cost: $" + p_sodas);
+            document.write("<br>");
+            
+            sum = p_hotdog + p_fries + p_sodas;
+            
+            
+            document.write("Total before tax: $" + sum);
+            document.write("<br>");
+            
+            if (sum >= 20) 
+            {
+                deduct = sum * DISCOUNT;
+                sum = sum - deduct;
+                document.write("Total with Joe's Special: $" + sum.toFixed(2));
+                document.write("<br>");
+            }
+
+            added_tax = (sum * TAX);
+            sum = sum + added_tax;
+            
+            document.write("Total with tax: $" + sum.toFixed(2));
+            document.write("<br>");
+            
+        </script>
+    </body>
+</html>
